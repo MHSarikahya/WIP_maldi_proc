@@ -62,7 +62,7 @@ cd(fullfile(ExcelDirectory)); % DO NOT EDIT
 xx = (strcat('*', Sex,'*', ROI,'*'));
 BrainRegion = dir(xx);
 
-%%% can run tolerance value check for Matrix after running up to line 60 %%%
+%%% can run tolerance value check for Matrix after running up to this line %%%
 
 sheet = 'Sheet1'; 
 
