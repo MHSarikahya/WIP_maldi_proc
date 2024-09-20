@@ -6,7 +6,12 @@
 % Signal Processing Toolbox, Signal Integrity Toolbox, PADCAT
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%% THIS IS THE WIP VERSION 04.26.2023 %%%%%
+%%%%%%% THIS IS A WIP VERSION 09.20.2023 %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% DO NOT USE AS IS, EXPERIMENTAL %%%%%%%%%
+%%%%%%% DO NOT USE AS IS, EXPERIMENTAL %%%%%%%%%
+%%%%%%% DO NOT USE AS IS, EXPERIMENTAL %%%%%%%%%
+%%%%%%% DO NOT USE AS IS, EXPERIMENTAL %%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clc;
 clear ;
@@ -25,17 +30,24 @@ ROI = 'DS';
 
 % PRL IL VS DS CA1 core shell
 %% Turn on list as needed
-% MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codefromYeungLab\Metabolite List PUFA\"; %" Metabolite List - PUFA
+% MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codeforYeungLab\Metabolite List PUFA\"; %" Metabolite List - PUFA
 %  Type = 'PUFA';
 %  tol = 0.001; % PUFA
 
-MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codefromYeungLab\Metabolite List Lipids\"; %" Metabolite List - LIPIDS
+MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codeforYeungLab\Metabolite List Lipids\"; %" Metabolite List - LIPIDS
 Type = 'Lipids';
 tol = 0.0008; % Lipid
 
-% MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codefromYeungLab\Metabolite List ZnO\"; %" Metabolite List - LIPIDS
+% MetaboliteListDirectory = "C:\Users\msari\OneDrive\Desktop\!!!! MALDI SCRIPTS !!!!\codeforYeungLab\Metabolite List ZnO\"; %" Metabolite List - Metabolites (ZnO specific)
 % Type = 'ZnO';
 % tol = 0.0018; % ZnO
+
+%%%How to calculate tolerance value; can only run iff data has been loaded in
+%% x = peakmz_Treated;
+%% y = peakmz_Veh;
+%% tol = 0.00005;
+%%%within tolderance 
+%% b = tol*max(abs([x(:);y(:)]))
 
 
 %% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -50,12 +62,8 @@ cd(fullfile(ExcelDirectory)); % DO NOT EDIT
 xx = (strcat('*', Sex,'*', ROI,'*'));
 BrainRegion = dir(xx);
 
-%%How to calculate tolerance value
-% x = peakmz_Treated;
-% y = peakmz_Veh;
-% tol = 0.00005;
-%%within tolderance 
-% b = tol*max(abs([x(:);y(:)]))
+%%% can run tolerance value check for Matrix after running up to line 60 %%%
+
 sheet = 'Sheet1'; 
 
 ExcelDIR = ExcelDirectory;
