@@ -191,7 +191,7 @@ ExcelDIR = ExcelDirectory;
 cd(fullfile(ExcelDirectory)); % DO NOT EDIT
 NameofFILExx = dir(strcat('*', NameofFILE ,'*'));
 
-
+%%%%% uncomment next line if running .mat only, otherwise, nothing will load in, adjust file name as needed%%%%%%%%
 % load(strcat(AnalysisDirectory,'Male_NASHpeakAli+MatchedLipids.mat')) % change ' ' to name of .mat you want to load
 
 
